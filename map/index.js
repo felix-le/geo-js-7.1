@@ -16,14 +16,15 @@ const postLocation = (latitude, longitude) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Headers': '*',
       },
       body: JSON.stringify(latitude, longitude),
     }
   );
 };
 
-function success(pos) {
-  var crd = pos.coords;
+async function success(pos) {
+  var crd = await pos.coords;
 
   const { latitude, longitude } = crd;
   postLocation(latitude, longitude);
@@ -33,5 +34,4 @@ function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 navigator.geolocation.getCurrentPosition(success, error, options);
-// setInterval(function () {
-// }, 3000);
+setInterval(function () {}, 2000);
