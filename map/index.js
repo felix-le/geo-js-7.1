@@ -26,7 +26,7 @@ function success(pos) {
   var crd = pos.coords;
 
   const { latitude, longitude } = crd;
-  if (!latitude || !longitude || latitude === 0 || longitude === 0) {
+  if (!latitude || !longitude) {
     postLocation(defaultLocation.latitude, defaultLocation.longitude);
   } else {
     postLocation(latitude, longitude);
