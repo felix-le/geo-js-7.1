@@ -1,18 +1,9 @@
 let positionArr = [0, 0];
-// https://optimistic-kare-843d65.netlify.app/.netlify/functions/hello?latitude=1&longitude=2
+// https://dreamy-heyrovsky-ef5242.netlify.app/.netlify/functions/hello?latitude=1&longitude=2
 
 function curPosition(latitude, longitude) {
-  switch (latitude) {
-    // All cases are for the votesArr
-    case 'latitude':
-      votesArr[0] = latitude;
-      break;
-    case 'longitude':
-      votesArr[1] = longitude;
-      break;
-    default:
-      break;
-  }
+  positionArr[0] = latitude;
+  positionArr[1] = longitude;
 }
 
 exports.handler = async (event) => {
