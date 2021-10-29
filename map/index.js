@@ -21,19 +21,24 @@ const postLocation = (latitude, longitude) => {
     }
   );
 };
-postLocation(defaultLocation.latitude, defaultLocation.longitude);
 
 function success(pos) {
   var crd = pos.coords;
 
   const { latitude, longitude } = crd;
+  if (!latitude || !longitude) {
+    postLocation(defaultLocation.latitude, defaultLocation.longitude);
+  } else {
+    postLocation(latitude, longitude);
+  }
 }
 
 function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
-
-navigator.geolocation.getCurrentPosition(success, error, options);
+setInterval(function () {
+  navigator.geolocation.getCurrentPosition(success, error, options);
+}, 3000);
 
 // var map = L.map('mapid').setView([43.7296141, -79.4845983], 20);
 

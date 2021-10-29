@@ -1,12 +1,15 @@
-let positionArr = [0, 0];
+let position = {
+  latitude: 0,
+  longitude: 0,
+};
 // https://dreamy-heyrovsky-ef5242.netlify.app/.netlify/functions/hello?latitude=1&longitude=2
 
 function curPosition(latitude, longitude) {
   if (latitude && longitude) {
-    positionArr[0] = latitude;
-    positionArr[1] = longitude;
+    position.latitude = latitude;
+    position.latitude = longitude;
   } else {
-    return positionArr;
+    return position;
   }
 }
 
@@ -18,6 +21,6 @@ exports.handler = async (event) => {
   return {
     statusCode: 200,
     headers: { 'Access-Control-Allow-Origin': '*' },
-    body: JSON.stringify(positionArr),
+    body: JSON.stringify(position),
   };
 };
