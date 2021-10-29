@@ -10,17 +10,18 @@ const defaultLocation = {
 };
 
 const postLocation = (latitude, longitude) => {
-  fetch('/api/locations', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      latitude,
-      longitude,
-    }),
-  });
+  fetch(
+    `https://dreamy-heyrovsky-ef5242.netlify.app/.netlify/functions/hello?latitude=${latitude}&longitude=${longitude}`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(latitude, longitude),
+    }
+  );
 };
+postLocation(defaultLocation.latitude, defaultLocation.longitude);
 
 function success(pos) {
   var crd = pos.coords;
