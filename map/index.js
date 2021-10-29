@@ -39,15 +39,3 @@ function error(err) {
 setInterval(function () {
   navigator.geolocation.getCurrentPosition(success, error, options);
 }, 3000);
-
-// var map = L.map('mapid').setView([43.7296141, -79.4845983], 20);
-
-// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//   attribution:
-//     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-// }).addTo(map);
-
-// L.marker([43.7296141, -79.4845983])
-//   .addTo(map)
-//   .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-//   .openPopup();
