@@ -33,5 +33,6 @@ async function success(pos) {
 function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
-navigator.geolocation.getCurrentPosition(success, error, options);
-setInterval(function () {}, 2000);
+setInterval(function () {
+  navigator.geolocation.getCurrentPosition(success, error, options);
+}, 2000);
