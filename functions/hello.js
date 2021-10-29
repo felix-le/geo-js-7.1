@@ -7,7 +7,7 @@ let position = {
 function curPosition(latitude, longitude) {
   if (latitude !== 0 && longitude !== 0) {
     position.latitude = latitude;
-    position.latitude = longitude;
+    position.longitude = longitude;
   } else {
     return position;
   }
