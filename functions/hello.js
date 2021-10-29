@@ -21,3 +21,4 @@ exports.handler = async (event) => {
     body: JSON.stringify(positionArr),
   };
 };
+console.log('updated');
