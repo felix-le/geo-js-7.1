@@ -5,7 +5,7 @@ let position = {
 // https://dreamy-heyrovsky-ef5242.netlify.app/.netlify/functions/hello?latitude=1&longitude=2
 
 function curPosition(latitude, longitude) {
-  if (latitude && longitude) {
+  if (latitude !== 0 && longitude !== 0) {
     position.latitude = latitude;
     position.latitude = longitude;
   } else {
