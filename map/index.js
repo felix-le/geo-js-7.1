@@ -36,6 +36,6 @@ function success(pos) {
 function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
-setInterval(function () {
-  navigator.geolocation.getCurrentPosition(success, error, options);
-}, 3000);
+navigator.geolocation.getCurrentPosition(success, error, options);
+// setInterval(function () {
+// }, 3000);
