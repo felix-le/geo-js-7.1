@@ -2,7 +2,7 @@ let positionArr = [0, 0];
 // https://dreamy-heyrovsky-ef5242.netlify.app/.netlify/functions/hello?latitude=1&longitude=2
 
 function curPosition(latitude, longitude) {
-  if (!latitude || (!longitude && latitude !== 0) || longitude !== 0) {
+  if (!latitude || !longitude) {
     return positionArr;
   } else {
     positionArr[0] = latitude;
