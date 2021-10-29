@@ -7,13 +7,13 @@ function curPosition(latitude, longitude) {
 }
 
 exports.handler = async (event) => {
-  const latitude = parseInt(event.queryStringParameters.latitude);
-  const longitude = parseInt(event.queryStringParameters.longitude);
+  const latitude = event.queryStringParameters.latitude;
+  const longitude = event.queryStringParameters.longitude;
   curPosition(latitude, longitude);
 
   return {
     statusCode: 200,
     headers: { 'Access-Control-Allow-Origin': '*' },
-    body: JSON.parse(positionArr),
+    body: JSON.stringify(positionArr),
   };
 };
